@@ -88,3 +88,7 @@ INSERT INTO Employee(Dno,SSN)
 VALUES(30,102660)
 ----------------------------------------------------------------------------------------------
 
+-- In the department table insert new department called "DEPT IT" , with id 100, employee with SSN = 112233 as a manager for this department. The start date for this manager is '1-11-2006'
+INSERT INTO Departments(Dname,Dnum,MGRSSN,[MGRStart Date])
+Values('DEPT IT',100,112233,'1-11-2006')
+
