@@ -36,3 +36,18 @@
                 Customers C full outer join Orders O
                 on C.id = O.customerId  
                 where O.customerId is null
+                
+                
+5) <a href='https://leetcode.com/problems/calculate-special-bonus'> Calculate Special Bonus </a> 
+        
+        select 
+                employee_id,
+                iif(employee_id % 2 <> 0 and name not like 'M%' , salary , 0) as bonus
+        from 
+                Employees
+                order by employee_id
+
+
+6) <a href='https://leetcode.com/problems/swap-salary'> Swap Salary </a>
+               
+               
