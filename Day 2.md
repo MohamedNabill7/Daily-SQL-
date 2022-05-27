@@ -1,7 +1,6 @@
 ### Display the Department id, name and id and the name of its manager
 
 SELECT 
-
 	Departments.Dnum,
 	
 	Departments.Dname,
@@ -9,7 +8,6 @@ SELECT
 	Dependent.Dependent_name,
 	
 	Dependent.ESSN
-
 FROM 
 
 	Departments INNER JOIN Dependent
