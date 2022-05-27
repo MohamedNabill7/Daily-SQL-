@@ -1,7 +1,6 @@
 ### Display the Department id, name and id and the name of its manager
 
 	SELECT
-
 		Departments.Dnum,
 		Departments.Dname,
 		Dependent.Dependent_name,
@@ -10,7 +9,6 @@
 		Departments INNER JOIN Dependent
 		ON Departments.MGRSSN = Dependent.ESSN
 
-----------------------------------------------------------------------------------------------
 
 -- Display the name of the departments and the name of the projects under its control
 
