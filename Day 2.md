@@ -1,16 +1,16 @@
 ### Display the Department id, name and id and the name of its manager
 
-SELECT
+	SELECT
 
-	Departments.Dnum,
-	Departments.Dname,
-	Dependent.Dependent_name,
-	Dependent.ESSN
+		Departments.Dnum,
+		Departments.Dname,
+		Dependent.Dependent_name,
+		Dependent.ESSN
 
-FROM 
+	FROM 
 
-	Departments INNER JOIN Dependent
-	ON Departments.MGRSSN = Dependent.ESSN
+		Departments INNER JOIN Dependent
+		ON Departments.MGRSSN = Dependent.ESSN
 
 ----------------------------------------------------------------------------------------------
 
