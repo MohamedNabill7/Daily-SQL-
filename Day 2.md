@@ -6,7 +6,9 @@ SELECT
 	Departments.Dname,
 	Dependent.Dependent_name,
 	Dependent.ESSN
+
 FROM 
+
 	Departments INNER JOIN Dependent
 	ON Departments.MGRSSN = Dependent.ESSN
 
