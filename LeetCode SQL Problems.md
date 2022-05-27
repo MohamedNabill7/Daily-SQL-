@@ -50,4 +50,16 @@
 
 6) <a href='https://leetcode.com/problems/swap-salary'> Swap Salary </a>
                
+        update 
+                Salary
+        set 
+                sex = iif(sex='f','m','f')
                
+
+7) <a href='https://leetcode.com/problems/delete-duplicate-emails'> Delete Duplicate Emails </a>
+        
+        delete 
+                P2 
+        from 
+                Person P1,Person P2
+                where P1.email = P2.email and P1.id < P2.id
