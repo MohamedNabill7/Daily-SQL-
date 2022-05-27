@@ -2,17 +2,17 @@
 ### a.The name and the gender of the dependence that's gender is Female and depending on Female Employee.
 ### b.And the male dependence that depends on Male Employee.
 
-  SELECT 
-        D.Dependent_name,D.Sex
-  FROM
-        Dependent D , Employee E
-        WHERE D.ESSN = E.Superssn AND E.SEX = 'F'AND D.Sex = 'F'
-        UNION ALL
-                SELECT 
-                        D.Dependent_name,D.Sex
-                FROM
-                        Dependent D , Employee E
-                        WHERE D.ESSN = E.Superssn AND E.SEX = 'M'AND D.Sex = 'M'
+        SELECT 
+                D.Dependent_name,D.Sex
+        FROM
+                Dependent D , Employee E
+                WHERE D.ESSN = E.Superssn AND E.SEX = 'F'AND D.Sex = 'F'
+                UNION ALL
+                        SELECT 
+                                D.Dependent_name,D.Sex
+                        FROM
+                                Dependent D , Employee E
+                                WHERE D.ESSN = E.Superssn AND E.SEX = 'M'AND D.Sex = 'M'
 
 
 ### For each project,list the project name and the total hours per week (for all employees) spent on that project.
