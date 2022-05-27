@@ -1,22 +1,49 @@
+SELECT
+	customer_id,
+	sum(price) as spent
+FROM
+	sales s,
+	menu m
+WHERE m.product_id = s.product_id
+GROUP BY customer_id;
+
+
 -- Display the Department id, name and id and the name of its manager
-SELECT Departments.Dnum,Departments.Dname,Dependent.Dependent_name,Dependent.ESSN
-FROM Departments INNER JOIN Dependent
+
+SELECT 
+	Departments.Dnum,
+	Departments.Dname,
+	Dependent.Dependent_name,
+	Dependent.ESSN
+FROM 
+	Departments INNER JOIN Dependent
 ON Departments.MGRSSN = Dependent.ESSN
 ----------------------------------------------------------------------------------------------
 
 -- Display the name of the departments and the name of the projects under its control
-SELECT D.Dname , P.Pname
-FROM Departments D INNER JOIN Project P
+
+SELECT 
+	D.Dname ,
+	P.Pname
+FROM 
+	Departments D INNER JOIN Project P
 ON D.Dnum = P.Dnum 
 ----------------------------------------------------------------------------------------------
 
 -- Display the full data about all the dependence associated with the name of the employee they depend on him/her
-SELECT *
-FROM Dependent 
+SELECT 
+	*
+FROM 
+	Dependent 
 
 -- Display the Id, name and location of the projects in Cairo or Alex city
-SELECT Pnumber,Pname,Plocation 
-FROM Project
+
+SELECT 
+	Pnumber,
+	Pname,
+	Plocation 
+FROM 
+	Project
 WHERE CITY IN ('CAIRO','ALEX')
 ----------------------------------------------------------------------------------------------
 
