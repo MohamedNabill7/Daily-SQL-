@@ -63,3 +63,21 @@
         from 
                 Person P1,Person P2
                 where P1.email = P2.email and P1.id < P2.id
+
+
+8) <a href='https://leetcode.com/problems/fix-names-in-a-table'> Fix Names in a Table </a>
+        
+        select 
+                user_id , concat(upper(substring(name,1,1)),lower(substring(name,2,len(name)-1))) as name
+        from
+                Users
+                order by user_id
+
+9) <a href='https://leetcode.com/problems/group-sold-products-by-the-date'> Group Sold Products By The Date </a>
+        
+        select 
+                sell_date , count(distinct(product)) as num_sold , string_agg(product,',') WITHIN GROUP (ORDER BY product ASC) as products
+        from 
+                Activities 
+                group by sell_date
+                
