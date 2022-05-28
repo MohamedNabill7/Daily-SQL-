@@ -75,9 +75,27 @@
 
 9) <a href='https://leetcode.com/problems/group-sold-products-by-the-date'> Group Sold Products By The Date </a>
         
+        with no_duplicate_activities
+        as
+        (
+         select
+                sell_date  , product
+        from
+                Activities
+                group by sell_date, product
+        )
         select 
                 sell_date , count(distinct(product)) as num_sold , string_agg(product,',') WITHIN GROUP (ORDER BY product ASC) as products
         from 
-                Activities 
+                no_duplicate_activities 
                 group by sell_date
                 
+
+10) <a href='https://leetcode.com/problems/patients-with-a-condition'> Patients With a Condition </a>
+        
+        select 
+                * 
+        from 
+                Patients
+                where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+
