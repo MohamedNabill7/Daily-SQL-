@@ -99,3 +99,59 @@
                 Patients
                 where conditions like 'DIAB1%' or conditions like '% DIAB1%'
 
+11) <a href='https://leetcode.com/problems/rearrange-products-table'> Rearrange Products Table </a>
+
+        select
+                Y.product_id,'store1' as store,Y.store1 as price
+        from
+                Products X , Products Y
+                where  Y.store1 is not null
+        union
+        select
+                Y.product_id,'store2' as store,Y.store2 as price
+        from
+                Products X , Products Y
+                where  Y.store2 is not null
+        union
+        select
+                Y.product_id,'store3' as store,Y.store3 as price
+        from
+                Products X , Products Y
+                where Y.store3 is not null
+                
+12) <a href='https://leetcode.com/problems/tree-node'> Tree Node </a>                
+
+       select 
+                id ,
+                case
+                        when p_id is null then 'Root'
+                        when (id not in (select distinct(p_id) from tree where p_id is not null)) then 'Leaf'
+                        else 'Inner'
+                end as type
+        from
+                Tree 
+                order by id
+
+
+13) <a href='https://leetcode.com/problems/second-highest-salary'> Second Highest Salary </a> 
+
+        select 
+                case
+                        when count(id) = 1  then null 
+                        else (select max(salary) from Employee where salary < (select max(salary) from Employee))
+                end as SecondHighestSalary
+        from
+                Employee
+
+
+14) <a href='https://leetcode.com/problems/employees-with-missing-information'> Employees With Missing Information </a>  
+
+        select 
+                iif(E.employee_id is null,S.employee_id,E.employee_id) as employee_id
+        from 
+                Employees E full outer join Salaries S
+                on E.employee_id = S.employee_id
+                where E.employee_id is null or S.employee_id is null
+                order by employee_id
+                
+                
