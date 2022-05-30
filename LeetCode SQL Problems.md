@@ -121,7 +121,7 @@
                 
 12) <a href='https://leetcode.com/problems/tree-node'> Tree Node </a>                
 
-       select 
+        select 
                 id ,
                 case
                         when p_id is null then 'Root'
