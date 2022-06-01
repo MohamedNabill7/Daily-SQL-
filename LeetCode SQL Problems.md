@@ -212,3 +212,32 @@
                         Weather 
               ) w       
         where temperature > lag_pivot and recordDate = DATEADD(day, 1,previousdate)
+
+
+20) <a href='https://leetcode.com/problems/user-activity-for-the-past-30-days-i'> User Activity for the Past 30 Days I </a>
+
+        select 
+                activity_date as day , count(distinct(user_id)) as active_users 
+        from 
+                Activity 
+                where activity_date > '2019-06-27' and activity_date <'2019-07-27'
+                group by activity_date
+        
+        
+21) <a href='https://leetcode.com/problems/daily-leads-and-partners'> Daily Leads and Partners </a>
+
+        select 
+                date_id , make_name , count(distinct(lead_id)) as unique_leads , count(distinct(partner_id)) as unique_partners
+        from
+                DailySales 
+                group by date_id , make_name
+
+        
+22) <a href='https://leetcode.com/problems/find-followers-count'> Find Followers Count </a>
+
+        select
+                user_id , count(follower_id) as followers_count
+        from
+                Followers
+                group by user_id
+                order by user_id
