@@ -184,3 +184,31 @@
                 group by customer_id
                 order by count_no_trans desc
         
+
+18) <a href='https://leetcode.com/problems/sales-person'> Sales Person </a>
+
+        select 
+                name
+        from 
+                SalesPerson
+                where sales_id not in (
+                                        select
+                                                O.sales_id 
+                                        from
+                                                Orders O inner join Company C
+                                                on C.com_id = O.com_id
+                                                where C.name = 'RED' 
+                                       )
+
+        
+19) <a href='https://leetcode.com/problems/rising-temperature'> Rising Temperature </a>    
+
+        select
+                id
+        from (
+                select 
+                        *, lag(temperature) over(order by recordDate) lag_pivot , lag(recordDate) over(order by recordDate) previousdate
+                from 
+                        Weather 
+              ) w       
+        where temperature > lag_pivot and recordDate = DATEADD(day, 1,previousdate)
