@@ -1,1 +1,2 @@
-## it is my solution of challenges during the internship 
+# SQL-Server-Tasks
+My Daily Solution For Tasks
